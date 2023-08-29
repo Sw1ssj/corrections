@@ -1,5 +1,8 @@
 const { spawn } = require('child_process');
 const ffmpeg = require('fluent-ffmpeg');
+
+
+
 const { exec } = require('child_process');
 
 
@@ -236,4 +239,9 @@ function wrapTextToWidth(text, maxWidth = 1080, fontSize = '50') {
 // ... [rest of your code]
 
 // Usage:
-module.exports = { addTextToVideo, wrapTextToWidth };
+const yourText = "This is what happened when my dog decided to go outside today";
+addTextToVideo('video.mp4', 'final_scaled_combined_test.mp4', yourText, (err) => {
+    if (err) {
+        console.error('Failed to process video:', err);
+    }
+});
